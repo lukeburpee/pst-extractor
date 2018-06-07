@@ -30,13 +30,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with pst-extractor. If not, see <http://www.gnu.org/licenses/>.
  */
-import { PSTMessage } from './PSTMessage/PSTMessage.class';
-import { PSTFile } from './PSTFile/PSTFile.class';
-import { PSTFolder } from './PSTFolder/PSTFolder.class';
-import { Log } from './Log.class';
-import { PSTAttachment } from './PSTAttachment/PSTAttachment.class';
 import * as fs from 'fs';
-import { PSTRecipient } from './PSTRecipient/PSTRecipient.class';
+
+import { PSTMessage } from '../src/PSTMessage/PSTMessage.class';
+import { PSTFile } from '../src/PSTFile/PSTFile.class';
+import { PSTFolder } from '../src/PSTFolder/PSTFolder.class';
+import { Log } from '../src/Log.class';
+import { PSTAttachment } from '../src/PSTAttachment/PSTAttachment.class';
+import { PSTRecipient } from '../src/PSTRecipient/PSTRecipient.class';
 
 const pstFolder = '/media/sf_Outlook/test/';
 const topOutputFolder = '/media/sf_Outlook/pst-extractor/';

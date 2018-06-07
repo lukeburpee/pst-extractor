@@ -1,12 +1,13 @@
-import { PSTMessage } from './PSTMessage/PSTMessage.class';
-import { PSTFile } from './PSTFile/PSTFile.class';
-import { PSTFolder } from './PSTFolder/PSTFolder.class';
+import { PSTMessage } from '../src/PSTMessage/PSTMessage.class';
+import { PSTFile } from '../src/PSTFile/PSTFile.class';
+import { PSTFolder } from '../src/PSTFolder/PSTFolder.class';
+
 const resolve = require('path').resolve;
 
 let depth = -1;
 let col = 0;
 
-const pstFile = new PSTFile(resolve('./src/testdata/michelle_lokay_000_1_1_1_1.pst'));
+const pstFile = new PSTFile(resolve('./testdata/michelle_lokay_000_1_1_1_1.pst'));
 console.log(pstFile.getMessageStore().displayName);
 processFolder(pstFile.getRootFolder());
 

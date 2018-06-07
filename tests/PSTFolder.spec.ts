@@ -1,14 +1,16 @@
-import { PSTFolder } from './PSTFolder.class';
 import * as chai from 'chai';
 import * as mocha from 'mocha';
-import { PSTFile } from '../PSTFile/PSTFile.class';
-import { Log } from '../Log.class';
+
+import { PSTFolder } from '../src/PSTFolder/PSTFolder.class';
+import { PSTFile } from '../src/PSTFile/PSTFile.class';
+import { Log } from '../src/Log.class';
+
 const resolve = require('path').resolve
 const expect = chai.expect;
 let pstFile: PSTFile;
 
 before(() => {
-    pstFile = new PSTFile(resolve('./src/testdata/michelle_lokay_000_1_1_1_1.pst'));
+    pstFile = new PSTFile(resolve('./tests/testdata/michelle_lokay_000_1_1_1_1.pst'));
 });
 
 after(() => {

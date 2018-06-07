@@ -127,11 +127,11 @@ export class PSTNodeInputStream {
                 if (multiStreams) {
                     debugger;
 
-                    // Log.debug1('list of all index items')
+                    // Log.debug('list of all index items')
                     // for (let i of this.indexItems) {
-                    //     Log.debug1(i.toJSON());
+                    //     Log.debug(i.toJSON());
                     // }
-                    // Log.debug1('----------------------')
+                    // Log.debug('----------------------')
                     // TODO - try this with different types of attachments, includin PDF
                     //  may be issue with zlib and PDF files. also, mutiple attachments.
                     for (let i of this.indexItems) {

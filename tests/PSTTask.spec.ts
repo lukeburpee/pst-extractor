@@ -1,16 +1,18 @@
 import * as chai from 'chai';
 import * as mocha from 'mocha';
-import { PSTFile } from '../PSTFile/PSTFile.class';
-import { PSTFolder } from '../PSTFolder/PSTFolder.class';
-import { PSTTask } from './PSTTask.class';
-import { Log } from '../Log.class';
+
+import { PSTFile } from '../src/PSTFile/PSTFile.class';
+import { PSTFolder } from '../src/PSTFolder/PSTFolder.class';
+import { PSTTask } from '../src/PSTTask/PSTTask.class';
+import { Log } from '../src/Log.class';
+
 const resolve = require('path').resolve
 const expect = chai.expect;
 let pstFile: PSTFile;
 let folder: PSTFolder;
 
 before(() => {
-    pstFile = new PSTFile(resolve('./src/testdata/mtnman1965@outlook.com.ost'));
+    pstFile = new PSTFile(resolve('./tests/testdata/mtnman1965@outlook.com.ost'));
 
     // get to Tasks folder
     let childFolders: PSTFolder[] = pstFile.getRootFolder().getSubFolders();

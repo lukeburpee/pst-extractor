@@ -55,11 +55,11 @@ export class NodeMap {
             let lkey = this.transformKey(key, idx);
             this.nameToId.set(lkey.toString(), propId);
             this.idToNumericName.set(propId, lkey);
-            Log.debug2('NodeMap::setId: propId = ' + propId + ', lkey = ' + lkey.toString());
+            Log.debug('NodeMap::setId: propId = ' + propId + ', lkey = ' + lkey.toString());
         } else if (typeof key === 'string') {
             this.nameToId.set(key, propId);
             this.idToStringName.set(propId, key);
-            Log.debug2('NodeMap::setId: propId = ' + propId + ', key = ' + key);
+            Log.debug('NodeMap::setId: propId = ' + propId + ', key = ' + key);
         } else {
             throw new Error('NodeMap::setId bad param type ' + typeof key);
         }
@@ -96,7 +96,7 @@ export class NodeMap {
     public getNumericName(propId: number): long | undefined {
         let lkey = this.idToNumericName.get(propId);
         if (!lkey) {
-            Log.debug2("NodeMap::getNumericName Name to Id mapping not found, propId = " + propId);
+            Log.debug("NodeMap::getNumericName Name to Id mapping not found, propId = " + propId);
         }
         return lkey;
     }    

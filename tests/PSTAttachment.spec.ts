@@ -1,19 +1,21 @@
 import * as chai from 'chai';
 import * as mocha from 'mocha';
-import { PSTFile } from '../PSTFile/PSTFile.class';
-import { PSTFolder } from '../PSTFolder/PSTFolder.class';
-import { PSTContact } from '../PSTContact/PSTContact.class';
-import { PSTAttachment } from './PSTAttachment.class';
-import { PSTTask } from '../PSTTask/PSTTask.class';
-import { PSTMessage } from '../PSTMessage/PSTMessage.class';
-import { Log } from '../Log.class';
+
+import { PSTFile } from '../src/PSTFile/PSTFile.class';
+import { PSTFolder } from '../src/PSTFolder/PSTFolder.class';
+import { PSTContact } from '../src/PSTContact/PSTContact.class';
+import { PSTAttachment } from '../src/PSTAttachment/PSTAttachment.class';
+import { PSTTask } from '../src/PSTTask/PSTTask.class';
+import { PSTMessage } from '../src/PSTMessage/PSTMessage.class';
+import { Log } from '../src/Log.class';
+
 const resolve = require('path').resolve;
 const expect = chai.expect;
 let pstFile: PSTFile;
 let subtreeFolder: PSTFolder;
 
 before(() => {
-    pstFile = new PSTFile(resolve('./src/testdata/mtnman1965@outlook.com.ost'));
+    pstFile = new PSTFile(resolve('./tests/testdata/mtnman1965@outlook.com.ost'));
 
     // get to IPM_SUBTREE folder
     let childFolders: PSTFolder[] = pstFile.getRootFolder().getSubFolders();

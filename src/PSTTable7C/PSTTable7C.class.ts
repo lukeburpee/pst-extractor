@@ -284,7 +284,7 @@ export class PSTTable7C extends PSTTable {
             dataSetNumber++;
             currentValueArrayStart += this.TCI_bm;
         }
-        Log.debug2('PSTTable7C::getItems number of items = ' + itemList.length);
+        Log.debug('PSTTable7C::getItems number of items = ' + itemList.length);
         if (setLocalList) {
             this.items = itemList;
         }

@@ -1,17 +1,19 @@
-import { PSTMessage } from './PSTMessage.class';
 import * as chai from 'chai';
 import * as long from 'long';
 import * as mocha from 'mocha';
-import { PSTFile } from '../PSTFile/PSTFile.class';
-import { PSTFolder } from '../PSTFolder/PSTFolder.class';
-import { Log } from '../Log.class';
+
+import { PSTMessage } from '../src/PSTMessage/PSTMessage.class';
+import { PSTFile } from '../src/PSTFile/PSTFile.class';
+import { PSTFolder } from '../src/PSTFolder/PSTFolder.class';
+import { Log } from '../src/Log.class';
+
 const resolve = require('path').resolve;
 const expect = chai.expect;
 let pstFile: PSTFile;
 let childFolders: PSTFolder[];
 
 before(() => {
-    pstFile = new PSTFile(resolve('./src/testdata/michelle_lokay_000_1_1_1_1.pst'));
+    pstFile = new PSTFile(resolve('./tests/testdata/michelle_lokay_000_1_1_1_1.pst'));
 
     // get to this point in hierarchy
     // Personal folders

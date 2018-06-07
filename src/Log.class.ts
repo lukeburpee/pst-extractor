@@ -1,32 +1,7 @@
-const winston = require('winston');
+import * as bunyan from 'bunyan';
 
 export class Log {
-    static logLevels = {
-        error: 0,
-        info: 1,
-        debug1: 2,
-        debug2: 3
-    };
-
-    static logColors = {
-        error: 'red',
-        info: 'yellow',
-        debug1: 'blue',
-        debug2: 'green'
-    };
-
-    static logger = new winston.Logger({
-        levels: Log.logLevels,
-        colors: Log.logColors,
-        level: 'debug1',
-        transports: [
-            new winston.transports.Console({ colorize: true }),
-            new winston.transports.File({
-                filename: 'errors.log',
-                level: 'error'
-            }),
-        ]
-    });
+    static logger = bunyan.createLogger({name:'pst-extractor'});
 
     static error(s: string) {
         Log.logger.error(s);
@@ -36,11 +11,11 @@ export class Log {
         Log.logger.info(s);
     }
 
-    static debug1(s: string) {
-        Log.logger.debug1(s);
+    static debug(s: string) {
+        Log.logger.debug(s);
     }
 
-    static debug2(s: string) {
-        Log.logger.debug2(s);
+    static trace(s: string) {
+        Log.logger.trace(s);
     }
 }

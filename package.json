@@ -7,6 +7,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
+    "build:web": "webpack",
     "test": "nyc --reporter=html mocha --opts mocha.opts",
     "readme": "node ./node_modules/.bin/node-readme"
   },
@@ -17,10 +18,13 @@
     ],
     "exclude": [
       "**/*.d.ts",
+      "dist",
+      "examples",
+      "coverage/prettify.js",
+      "coverage/sorter.js",
       "src/index.ts",
       "src/app/Log.class.ts",
-      "coverage/prettify.js",
-      "coverage/sorter.js"
+      "webpack.config.js"
     ],
     "reporter": [
       "html"
@@ -39,27 +43,31 @@
   },
   "homepage": "https://github.com/epfromer/pst-extractor#readme",
   "devDependencies": {
+    "@types/bunyan": "^1.8.4",
     "@types/chai": "^4.1.2",
     "@types/debug": "0.0.30",
+    "@types/dropboxjs": "0.0.29",
     "@types/long": "^4.0.0",
     "@types/mocha": "^5.0.0",
     "@types/node": "^10.1.2",
-    "@types/winston": "^2.3.9",
+    "awesome-typescript-loader": "^5.0.0",
     "chai": "^4.1.2",
     "chai-datetime": "^1.5.0",
     "debug": "^3.1.0",
     "mocha": "^5.0.5",
     "node-readme": "^0.1.9",
     "nyc": "^11.6.0",
-    "rimraf": "^2.6.2",
-    "source-map-support": "^0.5.4",
-    "supports-color": "^5.3.0",
+    "source-map-loader": "^0.2.3",
+    "source-map-support": "^0.5.6",
     "ts-node": "^6.0.3",
-    "typescript": "^2.8.1"
+    "typescript": "^2.9.1",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.2"
   },
   "dependencies": {
+    "browserfs": "^1.4.3",
+    "bunyan": "^1.8.12",
     "long": "^4.0.0",
-    "uuid-parse": "^1.0.0",
-    "winston": "^2.4.1"
+    "uuid-parse": "^1.0.0"
   }
 }

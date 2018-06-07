@@ -1,16 +1,18 @@
-import { PSTAppointment } from './PSTAppointment.class';
 import * as chai from 'chai';
 import * as mocha from 'mocha';
-import { PSTFile } from '../PSTFile/PSTFile.class';
-import { PSTFolder } from '../PSTFolder/PSTFolder.class';
-import { Log } from '../Log.class';
+
+import { PSTAppointment } from '../src/PSTAppointment/PSTAppointment.class';
+import { PSTFile } from '../src/PSTFile/PSTFile.class';
+import { PSTFolder } from '../src/PSTFolder/PSTFolder.class';
+import { Log } from '../src/Log.class';
+
 const resolve = require('path').resolve;
 const expect = chai.expect;
 let pstFile: PSTFile;
 let folder: PSTFolder;
 
 before(() => {
-    pstFile = new PSTFile(resolve('./src/testdata/mtnman1965@outlook.com.ost'));
+    pstFile = new PSTFile(resolve('./tests/testdata/mtnman1965@outlook.com.ost'));
 
     // get to Calendar folder
     let childFolders: PSTFolder[] = pstFile.getRootFolder().getSubFolders();
